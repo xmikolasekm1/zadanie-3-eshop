@@ -21,4 +21,6 @@ public interface IProductService {
     Long getAmountById(Long id);
 
     Long updateAmountById(ProductRequestBody requestBody,Long id);
+
+    ProductRepository getRepository();
 }

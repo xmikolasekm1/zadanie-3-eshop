@@ -22,4 +22,8 @@ public class Product {
     private String unit;
     private double price;
 
+
+    public void setNewAmount(Long toAdd){
+        this.amount = getAmount() - toAdd;
+    }
 }

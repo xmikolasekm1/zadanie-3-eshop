@@ -16,15 +16,6 @@ public class ProductService implements IProductService {
     @Autowired
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
-
-
-        /*Product p1 = new Product();
-        p1.setName("Mario");
-        this.productRepository.save(p1);
-
-        Product p2 = new Product();
-        p2.setName("Jozo");
-        this.productRepository.save(p2);*/
     }
 
     @Override
@@ -104,12 +95,8 @@ public class ProductService implements IProductService {
     @Override
     public Long getAmountById(Long id) {
         if (productRepository.existsById(id)) {
-            //Optional<Product> newProduct = productRepository.findById(id);
-            //Product newProduct1 = newProduct.get();
-            //return Long.toString(newProduct1.getAmount());
             return productRepository.findById(id).get().getAmount();
         }
-
         return null;
     }
 
@@ -122,5 +109,9 @@ public class ProductService implements IProductService {
         return newProduct1.getAmount();
     }
 
+    @Override
+    public ProductRepository getRepository() {
+        return productRepository;
+    }
 
 }

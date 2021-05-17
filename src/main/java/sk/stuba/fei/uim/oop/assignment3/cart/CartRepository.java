@@ -11,4 +11,7 @@ public interface CartRepository extends CrudRepository<Cart, Long> {
     List<Cart> findAll();
     boolean existsById(Long id);
     Optional<Cart> findById(Long id);
+    void deleteById(Long id);
+
+
 }
